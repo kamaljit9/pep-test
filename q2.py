@@ -1,26 +1,22 @@
-#Q2
-# n = int(input("Enter the no of name values: "))
-# name = []
-# for i in range(n):
-#     l = input("")
-#     name.append(l)
-# price = []
-# for i in range(n):
-#     k = input("")
-#     price.append(k)
-# weight = []
-# for i in range(n):
-#     m = input("")
-#     weight.append(m)
-# dictn = {}
-# for i in range(n):
-#     if name[i] not in dictn:
-#         dictn[name[i]] = 1
-#     else:
-#         dictn[name[i]] += 1
-# count = 0
-# for i in range(n):
-#     if dictn[name[i]] == 1:
-#         if price[i] != weight[i]:
-#             count += 1
-# print(count)
+n = int(input("Enter number of products: "))
+name = []
+price = []
+weight = []
+print("Enter names:")
+for i in range(n):
+    name.append(input())
+print("Enter prices:")
+for i in range(n):
+    price.append(int(input()))
+print("Enter weights:")
+for i in range(n):
+    weight.append(int(input()))
+s=set()
+count=0
+for i in range(n):
+    product = (name[i], price[i], weight[i])
+    if product in s:
+        count += 1
+    else:
+        s.add(product)
+print(count)
